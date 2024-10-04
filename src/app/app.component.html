@@ -1,0 +1,21 @@
+<div>
+  <h1>Customer Information</h1>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <!-- Add more columns as needed -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{ customer.id }}</td>
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.email }}</td>
+      <!-- Add more columns as needed -->
+    </tr>
+    </tbody>
+  </table>
+</div>
