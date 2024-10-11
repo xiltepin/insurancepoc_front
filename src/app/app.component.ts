@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CustomerListComponent } from './components/customer-list/customer-list.component'; // Asegúrate de que la ruta sea correcta
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  standalone: true,  // Indicamos que el componente es standalone
+  imports: [CustomerListComponent]
 })
 export class AppComponent {
-  title = 'insurancepoc_front';
+  title = 'insurancepoc_front';  // Puedes cambiar el título según tu aplicación
 }
