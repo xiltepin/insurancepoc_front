@@ -12,17 +12,26 @@ import { FormsModule } from '@angular/forms';
 })
 export class CustomerRegistrationComponent {
   customer = {
-    name: '',
+    first_name: '',
+    last_name: '',
     email: '',
     date_of_birth: '',
-    phone: ''
+    phone_number: '',
+    address: ''
   };
 
   constructor(private http: HttpClient, private router: Router) {}
 
   onSubmit() {
+
+    // Convert date_of_birth to ISO-8601 format
+    if (this.customer.date_of_birth) {
+      const date = new Date(this.customer.date_of_birth);
+      this.customer.date_of_birth = date.toISOString(); // Convert to ISO format
+    }
+
     // Make an HTTP POST request to your backend to register the customer
-    this.http.post('http://localhost:3000/register', this.customer).subscribe(
+    this.http.post('http://localhost:3000/CustomersInfo', this.customer).subscribe(
       response => {
         console.log('Customer registered successfully', response);
         // Navigate back to the CustomersInfo page or another page after successful registration

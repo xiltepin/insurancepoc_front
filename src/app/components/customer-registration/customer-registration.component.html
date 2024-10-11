@@ -2,8 +2,12 @@
   <h2>Customer Registration</h2>
   <form (ngSubmit)="onSubmit()" #registrationForm="ngForm">
     <div>
-      <label for="name">Name:</label>
-      <input type="text" id="name" required [(ngModel)]="customer.name" name="name">
+      <label for="first_name">Name:</label>
+      <input type="text" id="first_name" required [(ngModel)]="customer.first_name" name="name">
+    </div>
+    <div>
+      <label for="last_name">Last Name:</label>
+      <input type="text" id="last_name" required [(ngModel)]="customer.last_name" name="name">
     </div>
     <div>
       <label for="email">Email:</label>
@@ -11,11 +15,11 @@
     </div>
     <div>
       <label for="dateOfBirth">Date of Birth:</label>
-      <input type="date" id="dateOfBirth" required [(ngModel)]="customer.date_of_birth" name="dateOfBirth">
+      <input type="date" id="dateOfBirth" required [(ngModel)]="customer.date_of_birth" name="dateOfBirth" >
     </div>
     <div>
-      <label for="phone">Phone:</label>
-      <input type="tel" id="phone" required [(ngModel)]="customer.phone" name="phone">
+      <label for="phone_number">Phone:</label>
+      <input type="tel" id="phone_number" required [(ngModel)]="customer.phone_number" name="phone">
     </div>
     <button type="submit">Register</button>
   </form>

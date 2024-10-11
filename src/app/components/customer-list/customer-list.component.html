@@ -9,6 +9,7 @@
       <th>Address</th>
       <th>Phone Number</th>
       <th>Email</th>
+      <th>Vehicles</th> <!-- New header for vehicles -->
     </tr>
     </thead>
     <tbody>
@@ -20,6 +21,14 @@
       <td>{{ customer.address }}</td>
       <td>{{ customer.phone_number }}</td>
       <td>{{ customer.email }}</td>
+      <td>
+        <ul *ngIf="customer.Vehicles && customer.Vehicles.length > 0">
+          <li *ngFor="let vehicle of customer.Vehicles">
+            {{ vehicle.make }} {{ vehicle.model }} ({{ vehicle.year }}) - {{ vehicle.color }}
+          </li>
+        </ul>
+        <span *ngIf="!customer.Vehicles || customer.Vehicles.length === 0">No vehicles</span>
+      </td>
     </tr>
     </tbody>
   </table>
