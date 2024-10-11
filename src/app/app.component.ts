@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
-import { CustomerListComponent } from './components/customer-list/customer-list.component'; // Asegúrate de que la ruta sea correcta
+//import {CustomerListComponent} from './components/customer-list/customer-list.component';
+import { RouterOutlet } from '@angular/router';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  standalone: true,  // Indicamos que el componente es standalone
-  imports: [CustomerListComponent]
+  templateUrl: './app.component.html', // Ensure this path is correct
+  styleUrls: ['./app.component.css'], // Ensure this path is correct
+  standalone: true, // Ensure this is set for standalone components
+  imports: [CommonModule, RouterOutlet],
 })
 export class AppComponent {
-  title = 'insurancepoc_front';  // Puedes cambiar el título según tu aplicación
+  title = 'Insurance POC';
 }

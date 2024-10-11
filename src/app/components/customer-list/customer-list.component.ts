@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Importa CommonModule
 import { CustomerInfoService, CustomerInfo } from '../../services/customer-info.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-customer-list',
-  templateUrl: './customer-list.component.html',
-  styleUrls: ['./customer-list.component.css'],
   standalone: true,
-  imports: [CommonModule]  // Agrega CommonModule aquí
+  imports: [CommonModule],
+  templateUrl: './customer-list.component.html', // Ensure this path is correct
+  styleUrls: ['./customer-list.component.css'], // Ensure this path is correct
 })
 export class CustomerListComponent implements OnInit {
   customers: CustomerInfo[] = [];
@@ -17,7 +17,7 @@ export class CustomerListComponent implements OnInit {
   ngOnInit(): void {
     this.customerInfoService.getCustomersInfo().subscribe((data: CustomerInfo[]) => {
       this.customers = data;
-      //console.log(this.customers);
+      console.log(this.customers);
     });
   }
 }

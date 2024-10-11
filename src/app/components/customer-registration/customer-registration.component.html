@@ -1,0 +1,22 @@
+<div class="registration-container">
+  <h2>Customer Registration</h2>
+  <form (ngSubmit)="onSubmit()" #registrationForm="ngForm">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" required [(ngModel)]="customer.name" name="name">
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required [(ngModel)]="customer.email" name="email">
+    </div>
+    <div>
+      <label for="dateOfBirth">Date of Birth:</label>
+      <input type="date" id="dateOfBirth" required [(ngModel)]="customer.date_of_birth" name="dateOfBirth">
+    </div>
+    <div>
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" required [(ngModel)]="customer.phone" name="phone">
+    </div>
+    <button type="submit">Register</button>
+  </form>
+</div>
